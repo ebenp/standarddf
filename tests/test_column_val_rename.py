@@ -8,11 +8,32 @@ import pandas as pd
 
 # test for standarddf
 if __name__ == "__main__":
+    file1 = 'test_df.xlsx'
+    file2 = 'test_column_val_rename.xlsx'
 
-    df = pd.DataFrame({'Colors': ['red', 'yellow', 'green'], "Numbers": [1,2,3]})
+    df = standarddf(file1, file2)
     print(df)
 
-    file = "test_column_val_rename.xlsx"
+    file1 = 'test_df.xls'
+    file2 = 'test_column_val_rename.xlsx'
 
-    df = standarddf(df, file)
+    df = standarddf(file1, file2)
     print(df)
+
+    file1 = 'test_df.csv'
+    file2 = 'test_column_val_rename.xlsx'
+
+    df = standarddf(file1, file2)
+    print(df)
+
+    file1 = 'test_df.csv'
+    file2 = 'test_column_val_rename.xlsx'
+    output_file = 'out_test.csv'
+
+    standarddf(file1, file2, output_file)
+
+    file1 = 'test_df.xlsx'
+    file2 = 'test_column_val_rename.xlsx'
+    output_file = 'out_test.xlsx'
+
+    standarddf(file1, file2, output_file)
