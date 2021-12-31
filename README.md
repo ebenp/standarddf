@@ -19,9 +19,9 @@ df = standarddf(file1, file2)
 standarddf(file1, file2, output_file)
 ```
 
-Commandline usage is also allowed
+Commandline usage is also allowed. This assumes Python in on your path.
 
 ```
-python standarddf.py 'tests/test_df.xlsx' 'tests/test_column_val_rename.xlsx' 'out_test.xlsx'
+standarddf.py 'tests/test_df.xlsx' 'tests/test_column_val_rename.xlsx' 'out_test.xlsx'
 
 ```
