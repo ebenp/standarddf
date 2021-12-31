@@ -27,7 +27,8 @@ def standarddf(file1, file2, output_file = None, sheet_name = 'Sheet1'):
     for sn in dfs.sheet_names:
         if sn in df.columns:
             tmp_df = dfs.parse(sn)
-            df[sn].replace(to_replace = tmp_df['old_value'].values, value=tmp_df['new_value'].values, inplace = True)
+            # don't use inplace here to avoid the copy warning
+            df[sn] = df[sn].replace(to_replace = tmp_df['old_value'].values, value=tmp_df['new_value'].values)
 
     if output_file is None:
         return df
